@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Assignment_ImageHoster" target="1.5" />
+      <module name="Assignment_ImageHoster" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -18,8 +18,9 @@ public class ImageController {
     @RequestMapping("/")
     public String home(Model model){
 
-        List<Image> list = imageService.getAll();
-        model.addAttribute("images",list);
+        //Uncomment this below to get the images
+        //List<Image> list = imageService.getAll();
+        //model.addAttribute("images",list);
         return "home";
     }
 }

@@ -15,7 +15,17 @@
     <a class="dtc v-mid mid-gray link dim w-25" href="/" title="Home">
 
         <!-- Write the page heading below -->
-        <h3 color="red pa0">Write Title</h3>
+        <h1 color="red pa0">Image Uploader</h1>
+        <main id = "images">
+            <article th:each="i : ${images}">
+                <h2 class="title" th:text="${i.title}">Image Title</h2>
+                <div class="uploadDate">
+                    <i>Posted On</i>
+                    <span th:text="${i.uploadDate}"></span>
+                </div>
+                <p class="imageFile" th:utext="${i.imageFile}">Image Content</p>
+            </article>
+        </main>
         <!-- predefined style specifications below -->
     </a>
 

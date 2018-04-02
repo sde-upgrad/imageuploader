@@ -36,7 +36,7 @@ public class ImageServiceImp implements ImageService {
     // Gets two images from the uploaded images
     @Override
     public List<Image> getTwoImages(){
-       // write the appropriate return statement
+        return imageManager.getTwoImages();
     }
 
     // gets all the images that were uploaded

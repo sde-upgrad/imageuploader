@@ -23,7 +23,7 @@ public class ImageManager {
 
     // getting two images from all the uploaded images
     public List<Image> getTwoImages() {
-        // complete the return statement here.
+        return (ArrayList<Image>) fileOperations.readTwoFiles(Constants.IMAGE_DIR_NAME);
     }
 
     // saves the image file with the additional name - "image .." and title

@@ -63,13 +63,19 @@ public class FileOperations<T> {
     // Creating a method to read two files by giving them the path to the file storage similar to readAllFiles
     List<T> readTwoFiles(String dirPath) {
 
-        synchronized (fileOperations) {
-            List<T> arrayList = readAllFiles(dirPath);
-            }
+        List<T> arrayList = readAllFiles(dirPath);
 
+            if(arrayList.size()>=2){
+                ArrayList<T> list = new ArrayList<T>();
+                list.addAll(arrayList.subList(0, 2));
+                return list;
+            }
+            else {
+                return arrayList;
+            }
             // Add the code to return the top two files in the arraylist
         }
-    }
+
 
     //Writing the image string as a file
     public T writeToFile(final String filePrefix, final T object, final String suffix) {

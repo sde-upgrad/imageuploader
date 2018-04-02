@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- title bar text-->
+    <title>Image Uploader</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tachyons.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/app.css}"/>
+
+</head>
+
+<body class="sans-serif">
+
+<nav class="dt w-100 border-box pa3">
+    <a class="dtc v-mid mid-gray link dim w-25" href="#" title="Home">
+
+        <!-- navigation bar title-->
+        <h3 color="red pa0">Welcome to Image Uploader Website</h3>
+
+    </a>
+    <div class="dtc v-mid w-75 tr">
+
+        <!-- Sign In button in navigation bar-->
+        <a class="link dim blue link pointer f6 f5-ns dib" href="/users/signin" title="SignIn">Sign in &nbsp;&nbsp;&nbsp;</a>
+
+        <!-- Sign Up button in navigation bar-->
+        <a class="link dim blue link pointer f6 f5-ns dib" href="/users/signup" title="SignUp">Sign Up</a>
+
+    </div>
+</nav>
+
+<article>
+
+    <!-- Heading Text-->
+<h1 class="pa3">Uploaded Images</h1>
+
+<div class="cf pa2">
+
+    <!-- In ImageController images was a list, so here image indicates each element of the images list-->
+<div class="fl w-50 w-25-m w-20-l pa2" th:each="image : ${images}">
+
+    <!-- This is the imageFile string-->
+    <dt class="ml0 black truncate w-100" th:text="${image.imageFile}">Description</dt>
+
+<dl class="mt2 f6 lh-copy">
+
+    <!-- This is the title of image-->
+<dt class="clip">Title</dt>
+<dd class="ml0 black truncate w-100" th:text="${image.title}">Title</dd>
+
+    <!-- This is the image upload date-->
+<dt class="clip sans-serif">Date</dt>
+<dd class="ml0 gray truncate w-100" th:text="${image.uploadDate}">Upload Date</dd>
+
+</dl>
+</div>
+</div>
+</article>
+</body>
+</html>

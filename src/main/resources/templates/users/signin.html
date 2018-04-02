@@ -19,20 +19,24 @@
 
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
 
-            <!-- Sign In page Heading-->
+            <!-- Mapping of html signin page-->
             <legend class="f2 fw6 ph0 mh0">Sign into your account</legend>
             <div class="mt3">
 
                 <!-- Input Username text area-->
                 <label class="db fw6 lh-copy f6" for="username">Username</label>
-                <input class="pa2 input-reset ba w-100" type="text" name="username" id="username">
+
+                <!-- Here "required" is added at the end of below statement to ensure that username field is not empty-->
+                <input class="pa2 input-reset ba w-100" type="text" name="username" id="username" required>
 
             </div>
             <div class="mt3">
 
                 <!-- Input Password text area-->
                 <label class="db fw6 lh-copy f6" for="password">Password</label>
-                <input class="pa2 input-reset ba w-100" type="password" name="password" id="password">
+
+                <!-- Here "required" is added at the end of below statement to ensure that password field is not empty-->
+                <input class="pa2 input-reset ba w-100" type="password" name="password" id="password" required>
 
             </div>
         </fieldset>

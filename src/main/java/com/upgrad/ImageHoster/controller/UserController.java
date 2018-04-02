@@ -29,7 +29,7 @@ public class UserController {
     @RequestMapping(value = "/users/signin", method = RequestMethod.POST)
     public String signinPage(RegisterNewUser registerNewUser) {
 
-
+        //If condition written below verifies that username and password is valid or not
         if (userService.login(registerNewUser.getUsername(), registerNewUser.getPassword())) {
             // after login is successful, redirect the user to the home page
             return "redirect:/home";

@@ -8,14 +8,9 @@ public class UserServiceImpl implements UserService {
 
     // Implementation of methods mentioned in the User Service
 
-    // this is a dummy login method
-    // currently you may consider every login detail entered is correct
+    // Method written below verifies that username = "upgrad" and password = "sde"
     public boolean login(String username, String password){
-        if(username.equals("upgrad")  && password.equals("sde")) {
-            return true;
-        } else {
-            return false;
-        }
+        //write your code here for verification
     }
 
     @Override

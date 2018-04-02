@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6afa42-0ad7-4d1b-b1db-bcd60ffcf220" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/forms/RegisterNewUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/forms/RegisterNewUser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/User.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/signin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/signin.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/UserServiceImpl.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,14 +19,14 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state relative-caret-position="154">
+              <caret line="31" column="88" lean-forward="false" selection-start-line="31" selection-start-column="88" selection-end-line="31" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#838#839#0" expanded="true" />
                 <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#1670#1671#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1758#1759#0" expanded="true" />
+                <element signature="e#1795#1796#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="103" lean-forward="false" selection-start-line="37" selection-start-column="103" selection-end-line="37" selection-end-column="103" />
+            <state relative-caret-position="154">
+              <caret line="15" column="70" lean-forward="true" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -98,14 +92,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="256">
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="e#640#641#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,10 +166,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/users/signin.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -463,12 +458,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522327508775</updated>
       <workItem from="1522327517312" duration="16136000" />
-      <workItem from="1522646044347" duration="25301000" />
+      <workItem from="1522646044347" duration="25521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41437000" />
+    <option name="totallyTimeSpent" value="41657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -761,31 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#1670#1671#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/signin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -796,9 +766,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="103" lean-forward="false" selection-start-line="37" selection-start-column="103" selection-end-line="37" selection-end-column="103" />
+        <state relative-caret-position="154">
+          <caret line="15" column="70" lean-forward="true" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="31" column="88" lean-forward="false" selection-start-line="31" selection-start-column="88" selection-end-line="31" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#1795#1796#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

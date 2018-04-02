@@ -8,10 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
-// Annotation
+
 @Controller
 public class ImageController {
     @Autowired
@@ -49,8 +53,27 @@ public class ImageController {
     // mapping the upload in the URL to the upload html page in the project
     // The following method defines the action when you click on the upload button
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public String uploadPage(RegisterNewUser registerNewUser) {
+    // defining the upload
+    public String uploadFile(@RequestParam("title") String title, @RequestParam("file") MultipartFile file) throws IOException {
+        // creating an ide of the image
+        Long imageId = createId();
+        // uploading the image and converting it to a base64 encoded version of the image
+        String uploadedImageData = convertUploadedFileToBase64(file);
+        Image newImage = new Image(imageId, title, uploadedImageData);
+        // storing the new image
+        imageService.save(newImage);
         // after upload is successful, redirect the user to the home page
         return "redirect:/home";
+    }
+
+
+    // create a unique id for the uploaded image file
+    private Long createId() {
+        return System.currentTimeMillis() % 1000;
+    }
+
+    // converting to a base64 encoded version of the image
+    private String convertUploadedFileToBase64(MultipartFile file) throws IOException {
+        return Base64.getEncoder().encodeToString(file.getBytes());
     }
 }

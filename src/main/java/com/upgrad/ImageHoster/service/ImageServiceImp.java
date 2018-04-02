@@ -1,17 +1,16 @@
 package com.upgrad.ImageHoster.service;
 
+import com.upgrad.ImageHoster.common.ImageManager;
 import com.upgrad.ImageHoster.model.Image;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ImageServiceImp implements ImageService {
-    //Please implement the services mentioned in the Image Service Interface Here
-    //Here Implementation means writing the method specified in the ImageSerice Interface
+
+    /*
+    // This portion has been commented out as it is no longer needed.
     private List<Image> images = new ArrayList<Image>();
     public ImageServiceImp() {
 
@@ -26,37 +25,29 @@ public class ImageServiceImp implements ImageService {
         images.add(new Image(4L,"Image 4","This is Image 4",localDate));
 
     }
+    */
+    // creating an instance of Image Manager. Since, file operations are involved, every service will be called via image manager
+    private ImageManager imageManager;
 
+    public ImageServiceImp() {
+        imageManager = new ImageManager();
+    }
+
+    // Gets two images from the uploaded images
+    @Override
+    public List<Image> getTwoImages(){
+        return imageManager.getTwoImages();
+    }
+
+    // gets all the images that were uploaded
     @Override
     public List<Image> getAll() {
-        return images;
-        //Complete this method, add the return statement
+        return imageManager.getAllImages();
     }
 
-    @Override
-    public List<Image> getTwoImages() {
-        List<Image> twoImages = images.subList(0, 2);
-        return twoImages;
-        //Complete this method, add the return statement
-    }
-
-    @Override
-    public Image getByTitle(String title) {
-        return null;
-        //Complete this method, add the return statement
-    }
-
-    @Override
-    public void deleteByTitle(Image image) {
-        return;
-        //Complete this method, add the return statement
-    }
-
+    // writes an image to file
     @Override
     public void save(Image image) {
-        return ;
-        //Complete this method, add the return statement
+        imageManager.writeToFile(image);
     }
-    //Please implement the services mentioned in the Image Service Interface Here
-    //Here Implementation means writing the method specified in the ImageSerice Interface
 }

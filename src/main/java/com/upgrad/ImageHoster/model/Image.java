@@ -13,7 +13,7 @@ public class Image implements Serializable {
     private LocalDate uploadDate;
 
     // Constructor
-    public Image(Long id, String title, String imageFile, LocalDate uploadDate) {
+    public Image(Long id, String title, String imageFile) {
         this.id = id;
         this.title = title;
         this.imageFile = imageFile;

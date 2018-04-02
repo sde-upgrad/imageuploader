@@ -33,7 +33,7 @@
         <div class="aspect-ratio aspect-ratio--1x1">
 
             <!-- This is the imageFile string-->
-            <dt class="ml0 black truncate w-100" th:text="${image.imageFile}">Description</dt>
+            <img th:src="'data:image/jpeg;base64,'+${image.imageFile}" th:alt="${image.title}" class="w-100 db outline black-10" />
 
 
             <a href="#0" class="ph2 ph0-ns pb3 link db">

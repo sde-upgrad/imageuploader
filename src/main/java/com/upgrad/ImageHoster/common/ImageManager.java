@@ -15,15 +15,15 @@ public class ImageManager {
         fileOperations = FileOperations.getInstance();
     }
 
-    // getting two images from all the uploaded images
-    public List<Image> getTwoImages() {
-        return (ArrayList<Image>) fileOperations.readTwoFiles(Constants.IMAGE_DIR_NAME);
-    }
-
     // getting all the uploaded images
     public List<Image> getAllImages() {
 
         return (ArrayList<Image>) fileOperations.readAllFiles(Constants.IMAGE_DIR_NAME);
+    }
+
+    // getting two images from all the uploaded images
+    public List<Image> getTwoImages() {
+        // complete the return statement here.
     }
 
     // saves the image file with the additional name - "image .." and title

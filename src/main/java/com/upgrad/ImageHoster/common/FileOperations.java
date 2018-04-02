@@ -64,44 +64,10 @@ public class FileOperations<T> {
     List<T> readTwoFiles(String dirPath) {
 
         synchronized (fileOperations) {
-
-            List<T> arrayList = new ArrayList<T>();
-
-            File file = new File(dirPath);
-            File[] files = file.listFiles();
-
-            if (files != null) {
-
-                for (File f : files) {
-
-                    try {
-                        FileInputStream fileInputStream = new FileInputStream(f);
-                        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-
-                        T readObject = (T) objectInputStream.readObject();
-                        if (readObject != null) {
-                            arrayList.add(readObject);
-                        }
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                }
+            List<T> arrayList = readAllFiles(dirPath);
             }
 
-            //Checking if arraylist has 2 or more than two elements
-            //If yes then return those 2 elements else return all the elements in the arraylist
-            if (arrayList.size() >= 2) {
-                ArrayList<T> list = new ArrayList<T>();
-                list.addAll(arrayList.subList(0, 2));
-                return list;
-            } else {
-                return arrayList;
-            }
+            // Add the code to return the top two files in the arraylist
         }
     }
 

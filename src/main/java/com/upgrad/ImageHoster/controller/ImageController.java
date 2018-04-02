@@ -18,32 +18,36 @@ public class ImageController {
     private ImageService imageService;
 
 
-    // mapping the default/landing page when website url is called, here default url is http://localhost/80xx
+    // map the default/landing page when website url is called, here default url is http://localhost/80xx
     // the landing page is landing.html
     @RequestMapping("/")
     public String landingpage(Model model) {
         List<Image> list = imageService.getTwoImages();
         model.addAttribute("images", list);
+        // Line below indicates the name of the html page to be returned
         return "landingpage";
     }
 
-    // mapping the home in the URL to the home html page in the project
+    // map the home in the URL to the home html page in the project
     // the following method displays the home page
-    @RequestMapping("/home")
+
+    // write the mapping request here
     public String home(Model model) {
 
         List<Image> list = imageService.getAll();
         model.addAttribute("images", list);
 
-        return "home";
+        // In the return statement write the path of the home.html HTML file in the project
+        return "";
     }
 
     // mapping the upload in the URL to the upload html page in the project
     // the following method displays the upload page
-    @RequestMapping("/upload")
-    public String upload(Model model) {
 
-        return "upload";
+    // write the mapping request here
+    public String upload(Model model) {
+        // In the return statement write the path of the upload.html HTML file in the project
+        return "";
     }
 
     // mapping the upload in the URL to the upload html page in the project

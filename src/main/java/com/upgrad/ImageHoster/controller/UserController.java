@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // mapping the sign-in in the URL to the sign-in html page in the project
+    // map the sign-in in the URL to the sign-in html page in the project
     // the following method displays the main sign-in page
     @RequestMapping("/users/signin")
     public String signin(RegisterNewUser registerNewUser) {
@@ -24,7 +24,7 @@ public class UserController {
     }
 
 
-    // mapping the sign-in, in the URL to the sign-in html page in the project
+    // map the sign-in, in the URL to the sign-in html page in the project
     // The following method defines the action when you click on the sign in button
     @RequestMapping(value = "/users/signin", method = RequestMethod.POST)
     public String signinPage(RegisterNewUser registerNewUser) {
@@ -32,29 +32,36 @@ public class UserController {
         boolean validUser = true;
         if (validUser) {
             // after login is successful, redirect the user to the home page
+            // In the return statement, path of the redirection message to home.html HTML file in the project is mentioned
             return "redirect:/home";
         }
+
         return "redirect:/";
     }
 
 
-    // mapping the sign-up, in the URL to the signup html file in the project
+    // map the sign-up, in the URL to the signup html file in the project
     // the following method displays the main sign-up page
-    @RequestMapping("/users/signup")
+
+    // write the mapping request here
     public String signup(RegisterNewUser registerNewUser) {
-        return "users/signup";
+        // In the return statement write the path of the signup.html HTML file in the project
+        return "";
     }
 
-    // mapping the sign-up, in the URL to the signup html file in the project
+    // map the sign-up, in the URL to the signup html file in the project
     // The following method defines the action when you click on the sign-up button
-    @RequestMapping(value = "/users/signup", method = RequestMethod.POST)
+
+    // write the mapping request here
     public String signupPage(RegisterNewUser registerNewUser) {
         // here you may consider that every user is valid, so that each registration is successful, even if empty
         boolean validUser = true;
 
         if (validUser) {
             // after sign up is successful, redirect the user to the login page
-            return "redirect:/users/signin";
+
+            // In the return statement write the path of the redirection to signin.html HTML file in the project
+            return "";
         }
         return "redirect:/";
     }

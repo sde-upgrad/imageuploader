@@ -2,8 +2,11 @@ package com.upgrad.ImageHoster.model;
 
 import java.time.LocalDate;
 import java.io.Serializable;
+import java.util.Date;
 
-
+// Serializable is used to pass the object instance into a hash function to convert it into bytes format
+// and then store it into the database as a row in the table
+// The byte stream created is platform independent, so object serialized on one platform can be deserialized on different platform
 public class Image implements Serializable {
 
     // image attributes
@@ -52,5 +55,4 @@ public class Image implements Serializable {
     public void setUploadDate(LocalDate uploadDate) {
         this.uploadDate = uploadDate;
     }
-
 }

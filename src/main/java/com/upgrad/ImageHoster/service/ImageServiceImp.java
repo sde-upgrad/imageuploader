@@ -50,4 +50,31 @@ public class ImageServiceImp implements ImageService {
     public void save(Image image) {
         imageManager.writeToFile(image);
     }
+
+    // get n most recent images
+    @Override
+    public List<Image> getMostNRecentImages(int numImages) {
+
+        return imageManager.getMostNRecentImages(numImages);
+    }
+
+    //gets the number of images
+    @Override
+    public int getNumImages() {
+
+        return imageManager.getNumImages();
+    }
+
+    // gets the image by its title
+    @Override
+    public Image getByTitle(String title) {
+        return imageManager.getImage(title);
+    }
+
+    // deletes image by its title
+    @Override
+    public void deleteByTitle(Image image) {
+        imageManager.deleteImage(image.getTitle());
+    }
+
 }

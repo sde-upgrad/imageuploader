@@ -93,4 +93,65 @@ public class FileOperations<T> {
             return object;
         }
     }
+
+    //Reading n recent images from files
+    List<T> readRecentFiles(final int numberOfFiles, final String DirLocation) {
+
+        synchronized (fileOperations) {
+            Map<Long, File> sortByModificationDate = new TreeMap<Long, File>(Collections.reverseOrder());
+            List<T> arrayList = new ArrayList<T>();
+
+            try {
+                File file = new File(DirLocation);
+                File[] files = file.listFiles();
+
+                if (files != null) {
+                    for (File f : files) {
+                        sortByModificationDate.put(f.lastModified(), f);
+                    }
+
+                    int count = numberOfFiles;
+                    for (Long modifiedOn : sortByModificationDate.keySet()) {
+                        FileInputStream fileInputStream = new FileInputStream(sortByModificationDate.get(modifiedOn));
+                        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+                        T readObject = (T) objectInputStream.readObject();
+                        if (readObject != null) {
+                            arrayList.add(readObject);
+                        }
+                        count--;
+                        if (count <= 0) break;
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Error " + e.getMessage());
+            }
+            return arrayList;
+        }
+    }
+
+    // reading image from file based upon title
+    T readFile(final String filePrefix, final String uniqueId) {
+
+        synchronized (fileOperations) {
+            T readObject = null;
+            try {
+                FileInputStream fileInputStream = new FileInputStream(new File(filePrefix + uniqueId));
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+                readObject = (T) objectInputStream.readObject();
+            } catch (IOException e) {
+                System.out.println("Error " + e.getMessage());
+            } catch (ClassNotFoundException e) {
+                System.out.println("Error " + e.getMessage());
+            }
+            return readObject;
+        }
+    }
+
+    // Deleting an image from files based upon title
+    boolean deleteFile(final String filePrefix, final String uniqueId) {
+        synchronized (fileOperations) {
+            File file = new File(filePrefix + uniqueId);
+            return file.delete();
+        }
+    }
 }

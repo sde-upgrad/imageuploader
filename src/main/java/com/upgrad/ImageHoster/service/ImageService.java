@@ -9,4 +9,8 @@ public interface ImageService{
     List<Image> getAll();
     List<Image> getTwoImages();
     void save(Image image);
+    Image getByTitle(String title);
+    void deleteByTitle(Image image);
+    int getNumImages();
+    List<Image> getMostNRecentImages(int numImages);
 }

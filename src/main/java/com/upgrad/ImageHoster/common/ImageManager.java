@@ -18,10 +18,10 @@ public class ImageManager {
         ImageManager imageManager = new ImageManager();
 
         // creating instance of imageManager to implement deleteImage
-        imageManager.deleteImage("Hi");
+        // Write the code to delete an image from file with title "Hi"
 
         // implementing getNumImages
-        System.out.println(getNumImages());
+        // Write the code to print the number of images in the files
 
     }
 
@@ -61,15 +61,17 @@ public class ImageManager {
         return files.length;
     }
 
-    // Deletes an image of title "t" from the files with a title "t"
-    public boolean deleteImage(final String imageTitle) {
 
-        return (boolean) fileOperations.deleteFile(Constants.POST_FILE_PREFIX, imageTitle);
-    }
 
     // Returns an image of title "t" from the files with a title "t"
     public Image getImage(final String prefix) {
         return (Image) fileOperations.readFile(Constants.POST_FILE_PREFIX, prefix);
+    }
+
+    // Deletes an image of title "t" from the files with a title "t"
+    public boolean deleteImage(final String imageTitle) {
+
+        //Write the return statement for deleteImage
     }
 
 }

@@ -62,13 +62,13 @@ public class ImageServiceImp implements ImageService {
     @Override
     public int getNumImages() {
 
-        return imageManager.getNumImages();
+        // Write the return statement for getNumImages method.
     }
 
     // gets the image by its title
     @Override
     public Image getByTitle(String title) {
-        return imageManager.getImage(title);
+        // Write the return statement for getByTitle method
     }
 
     // deletes image by its title

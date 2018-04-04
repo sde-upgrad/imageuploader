@@ -75,7 +75,9 @@ public class ImageController {
         // Finding the image based upon its title
         Image image = imageService.getByTitle(title);
         // Incrementing the numview by 1 if this page is open
-        image.setNumView(image.getNumView() + 1);
+
+      // write the code to Get the previous numview, increment it by 1 and then set it back with the increased value
+
         // Saving the image details to update the image
         imageService.save(image);
         model.addAttribute("image", image);
@@ -83,57 +85,6 @@ public class ImageController {
         return "images/image";
     }
 
-    // The following method defines the action when you click on the delete button
-
-    // Add request mapping to /images/{title}/delete
-    public String deleteImage(@PathVariable String title, Model model) {
-        // Finding the image based upon its title
-        Image image = imageService.getByTitle(title);
-        // deleting the image by its title
-
-        // invoke the delete by title method mentioned in the Image services
-
-
-        // redirecting to home once the action is complete
-        return "redirect:/home";
-    }
-
-    //mapping the edit image in the URL to the edit html page in the project
-    @RequestMapping("/images/{title}/edit")
-    public String editImage(@PathVariable String title, Model model) {
-        // Finding the image based upon its title
-        Image image = imageService.getByTitle(title);
-        model.addAttribute("image", image);
-
-        return "images/edit";
-    }
-
-    // The following method defines the action when you click on the edit button
-    // Write the request mapping, it would be similar to editImage()'s request mapping but request method will be POST
-    // refer to the implementations of the methods above
-
-    // @RequestParam is used to receive data from the html file
-    public String edit(@RequestParam("title") String title,
-                       @RequestParam("description") String description,
-                       @RequestParam("file") MultipartFile file) throws IOException {
-        Image image = imageService.getByTitle(title);
-        //Converting the new image received to base 64
-        String updatedImageData = convertUploadedFileToBase64(file);
-
-        // write the code to check if the new image is empty then it means image is not updated, so setting the image to the previous image itself
-        // hint: set the image like this if empty : image.setImageFile(image.getImageFile());
-        // else write the code to set the updatedImageData
-
-
-        // write the code to set description to the description recieved  through view
-
-
-        // write the code to invoke the save service from the imageService
-
-
-        // redirecting back to the image page
-        return "redirect:/images/" + title;
-    }
 
 
     // create a unique id for the uploaded image file

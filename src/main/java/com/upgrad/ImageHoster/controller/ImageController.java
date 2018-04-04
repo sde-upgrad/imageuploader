@@ -84,12 +84,15 @@ public class ImageController {
     }
 
     // The following method defines the action when you click on the delete button
-    @RequestMapping(value = "/images/{title}/delete")
+
+    // Add request mapping to /images/{title}/delete
     public String deleteImage(@PathVariable String title, Model model) {
         // Finding the image based upon its title
         Image image = imageService.getByTitle(title);
         // deleting the image by its title
-        imageService.deleteByTitle(image);
+
+        // invoke the delete by title method mentioned in the Image services
+
 
         // redirecting to home once the action is complete
         return "redirect:/home";
@@ -106,7 +109,9 @@ public class ImageController {
     }
 
     // The following method defines the action when you click on the edit button
-    @RequestMapping(value = "/editImage", method = RequestMethod.POST)
+    // Write the request mapping, it would be similar to editImage()'s request mapping but request method will be POST
+    // refer to the implementations of the methods above
+
     // @RequestParam is used to receive data from the html file
     public String edit(@RequestParam("title") String title,
                        @RequestParam("description") String description,
@@ -115,17 +120,16 @@ public class ImageController {
         //Converting the new image received to base 64
         String updatedImageData = convertUploadedFileToBase64(file);
 
-        // if the new image is empty then it means image is not updated, so setting the image to the previous image itself
-        if(updatedImageData.isEmpty())
-            image.setImageFile(image.getImageFile());
-        // else setting the new image to the updated image
-        else {image.setImageFile(updatedImageData);}
+        // write the code to check if the new image is empty then it means image is not updated, so setting the image to the previous image itself
+        // hint: set the image like this if empty : image.setImageFile(image.getImageFile());
+        // else write the code to set the updatedImageData
 
-        // setting the image description to the new description
-        image.setDescription(description);
 
-        // saving the changes done to the image to update it
-        imageService.save(image);
+        // write the code to set description to the description recieved  through view
+
+
+        // write the code to invoke the save service from the imageService
+
 
         // redirecting back to the image page
         return "redirect:/images/" + title;

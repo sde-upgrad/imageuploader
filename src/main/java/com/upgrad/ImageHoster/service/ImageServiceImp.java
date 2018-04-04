@@ -48,6 +48,7 @@ public class ImageServiceImp implements ImageService {
     // writes an image to file
     @Override
     public void save(Image image) {
+
         imageManager.writeToFile(image);
     }
 
@@ -62,13 +63,13 @@ public class ImageServiceImp implements ImageService {
     @Override
     public int getNumImages() {
 
-        // Write the return statement for getNumImages method.
+        return imageManager.getNumImages();
     }
 
     // gets the image by its title
     @Override
     public Image getByTitle(String title) {
-        // Write the return statement for getByTitle method
+        return imageManager.getImage(title);
     }
 
     // deletes image by its title

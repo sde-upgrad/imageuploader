@@ -31,21 +31,14 @@
     <!-- In ImageController images was a list, so here image indicates each element of the images list-->
     <article class="fl w-100 w-50-m  w-25-ns pa2-ns"  th:each="image : ${images}">
         <div class="aspect-ratio aspect-ratio--1x1">
-
-            <!-- This is the imageFile string-->
-            <img th:src="'data:image/jpeg;base64,'+${image.imageFile}" th:alt="${image.title}" class="w-100 db outline black-10" />
-
-
-            <a href="#0" class="ph2 ph0-ns pb3 link db">
-
-                <!-- This is the title of image-->
-                <h3 class="f5 f4-ns mb0 black-90" th:text="${image.title}">Title of piece</h3>
-
-                <!-- This is the image upload date-->
-                <h3 class="f6 f5 fw4 mt2 black-60" th:text="${image.uploadDate}">Upload Date</h3>
-            </a>
+            <img class="db bg-center cover aspect-ratio--object" th:style="'background:url(data:image/jpeg;base64,'+${image.imageFile} + ');'" />
         </div>
 
+        <!--Displaying the image title and creating it as a link so that on clicking it user can be redirected to specific image page-->
+        <a th:href="'/images/' + ${image.title}" class="ph2 ph0-ns link db">
+            <h3 class="f5 f4-ns mb0 black-90 link hover blue" th:text="${image.title}">Title of piece</h3>
+        </a>
+        <h3 class="f6 f5 fw4 mt2 black-60" th:text="${image.uploadDate}">Subtitle of piece</h3>
     </article>
 </section>
 

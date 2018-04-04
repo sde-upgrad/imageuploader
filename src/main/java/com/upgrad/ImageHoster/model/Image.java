@@ -12,14 +12,18 @@ public class Image implements Serializable {
     // image attributes
     private Long id;
     private String title;
+    private String description; // adding this variable to give the description of the image
     private String imageFile; // this is a base64 encoded version of the image
+    private int numView; // adding this variable to find the number of views of each image
     private LocalDate uploadDate;
 
     // Constructor
-    public Image(Long id, String title, String imageFile) {
+    public Image(Long id, String title, String description, String imageFile) {
         this.id = id;
+        this.description = description;
         this.title = title;
         this.imageFile = imageFile;
+        this.numView = 0;
         this.uploadDate = LocalDate.now();
     }
 
@@ -54,5 +58,21 @@ public class Image implements Serializable {
 
     public void setUploadDate(LocalDate uploadDate) {
         this.uploadDate = uploadDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+        }
+
+    public int getNumView() {
+        return numView;
+    }
+
+    public void setNumView(int numView) {
+        this.numView = numView;
     }
 }

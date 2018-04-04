@@ -20,6 +20,10 @@ public class FileOperations<T> {
     // Creating a method to read all files by giving them the path to the file storage
     List<T> readAllFiles(String dirPath) {
 
+        //Here "synchronized" is a java keyword used in multithreading environmentand acts as a lock
+        //in the case of file writing and reading (or file IO), it prevents a multithreaded program to write and read a file at the same time
+        //i.e. some thread needs to finish writing to the file first and then another thread can read the file
+        //but reading and writing cannot (and should not) happen concurrently
         synchronized (fileOperations) {
 
             // Creating a new arraylist to store all files into the list
@@ -46,6 +50,8 @@ public class FileOperations<T> {
                         if (readObject != null) {
                             arrayList.add(readObject);
                         }
+                        fileInputStream.close();
+                        objectInputStream.close();
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
@@ -80,9 +86,11 @@ public class FileOperations<T> {
     //Writing the image string as a file
     public T writeToFile(final String filePrefix, final T object, final String suffix) {
 
+
         synchronized (fileOperations) {
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(new File(filePrefix + suffix), true);
+                // Changing the append to false because now image can be edited
+                FileOutputStream fileOutputStream = new FileOutputStream(new File(filePrefix + suffix), false);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(object);
                 objectOutputStream.close();
@@ -119,6 +127,8 @@ public class FileOperations<T> {
                             arrayList.add(readObject);
                         }
                         count--;
+                        fileInputStream.close();
+                        objectInputStream.close();
                         if (count <= 0) break;
                     }
                 }
@@ -138,11 +148,14 @@ public class FileOperations<T> {
                 FileInputStream fileInputStream = new FileInputStream(new File(filePrefix + uniqueId));
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 readObject = (T) objectInputStream.readObject();
+                fileInputStream.close();
+                objectInputStream.close();
             } catch (IOException e) {
                 System.out.println("Error " + e.getMessage());
             } catch (ClassNotFoundException e) {
                 System.out.println("Error " + e.getMessage());
             }
+
             return readObject;
         }
     }
@@ -150,7 +163,7 @@ public class FileOperations<T> {
     // Deleting an image from files based upon title
     boolean deleteFile(final String filePrefix, final String uniqueId) {
         synchronized (fileOperations) {
-            File file = new File(filePrefix + uniqueId);
+            File file = new File(filePrefix+uniqueId);
             return file.delete();
         }
     }

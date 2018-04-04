@@ -75,15 +75,14 @@ public class ImageController {
         // Finding the image based upon its title
         Image image = imageService.getByTitle(title);
         // Incrementing the numview by 1 if this page is open
-
-      // write the code to Get the previous numview, increment it by 1 and then set it back with the increased value
-
+        image.setNumView(image.getNumView() + 1);
         // Saving the image details to update the image
         imageService.save(image);
         model.addAttribute("image", image);
 
         return "images/image";
     }
+
 
 
 

@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6afa42-0ad7-4d1b-b1db-bcd60ffcf220" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imageGraphs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imageHi" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imagemax" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imagepic" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/upload.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/upload.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/FileOperations.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/ImageManager.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/controller/ImageController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/model/Image.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/UserServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/imageHi" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/imageheap" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/upload.html" afterPath="$PROJECT_DIR$/target/classes/templates/upload.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imageHeap" afterPath="$PROJECT_DIR$/src/main/resources/static/images/imageHeap" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/images/edit.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/images/edit.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/images/image.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/images/image.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,15 +19,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="131" column="45" lean-forward="false" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
+            <state relative-caret-position="-322">
+              <caret line="82" column="30" lean-forward="true" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5448#5449#0" expanded="true" />
-                <element signature="e#5504#5505#0" expanded="true" />
+                <element signature="e#5446#5447#0" expanded="true" />
+                <element signature="e#5502#5503#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -92,7 +77,7 @@
       <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
+            <state relative-caret-position="697">
               <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -115,8 +100,8 @@
       <file leaf-file-name="ImageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding>
                 <element signature="e#331#361#0" expanded="true" />
               </folding>
@@ -137,8 +122,8 @@
       <file leaf-file-name="FileOperations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-846">
-              <caret line="91" column="79" lean-forward="false" selection-start-line="91" selection-start-column="79" selection-end-line="91" selection-end-column="79" />
+            <state relative-caret-position="2312">
+              <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -147,8 +132,8 @@
       <file leaf-file-name="image.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/image.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="47" lean-forward="false" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,8 +142,8 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+            <state relative-caret-position="255">
+              <caret line="42" column="123" lean-forward="false" selection-start-line="42" selection-start-column="123" selection-end-line="42" selection-end-column="123" />
               <folding />
             </state>
           </provider>
@@ -204,13 +189,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/upload.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/images/edit.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/images/image.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/images/image.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/images/edit.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" />
       </list>
     </option>
   </component>
@@ -555,12 +540,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522327508775</updated>
       <workItem from="1522327517312" duration="16136000" />
-      <workItem from="1522646044347" duration="77092000" />
+      <workItem from="1522646044347" duration="82918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93228000" />
+    <option name="totallyTimeSpent" value="99054000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -872,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-846">
-          <caret line="91" column="79" lean-forward="false" selection-start-line="91" selection-start-column="79" selection-end-line="91" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="871">
@@ -907,9 +884,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="42" column="123" lean-forward="false" selection-start-line="42" selection-start-column="123" selection-end-line="42" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding>
+            <element signature="e#331#361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/image.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
+        <state relative-caret-position="697">
           <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -928,49 +947,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-          <folding>
-            <element signature="e#331#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="131" column="45" lean-forward="false" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
+        <state relative-caret-position="-322">
+          <caret line="82" column="30" lean-forward="true" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5448#5449#0" expanded="true" />
-            <element signature="e#5504#5505#0" expanded="true" />
+            <element signature="e#5446#5447#0" expanded="true" />
+            <element signature="e#5502#5503#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/image.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="47" lean-forward="false" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

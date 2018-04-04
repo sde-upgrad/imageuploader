@@ -21,7 +21,7 @@ public class ImageManager {
         //imageManager.deleteImage("Hi");
 
         // implementing getNumImages
-        System.out.println(getNumImages());
+        //System.out.println(getNumImages());
 
     }
 

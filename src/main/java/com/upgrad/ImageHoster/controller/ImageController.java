@@ -127,8 +127,6 @@ public class ImageController {
         // saving the changes done to the image to update it
         imageService.save(image);
 
-
-
         // redirecting back to the image page
         return "redirect:/images/" + title;
     }

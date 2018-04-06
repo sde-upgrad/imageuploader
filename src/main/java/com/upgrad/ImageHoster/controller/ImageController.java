@@ -26,6 +26,7 @@ public class ImageController {
     // the landing page is landing.html
     @RequestMapping("/")
     public String landingPage(Model model) {
+        //Implement getAll() method instead of getTwoImages() method here
         List<Image> list = imageService.getTwoImages();
         model.addAttribute("images", list);
         return "landingpage";
@@ -36,7 +37,7 @@ public class ImageController {
     @RequestMapping("/home")
     public String home(Model model) {
 
-        List<Image> image =imageService.getAll();
+        List<Image> image =imageService.getTwoImages();
         model.addAttribute("images", image);
 
         return "home";

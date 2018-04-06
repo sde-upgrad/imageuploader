@@ -26,17 +26,11 @@ public class ImageManager extends SessionManager{
 
     // creating an instance of File Operations
     public ImageManager() {
-
-
     }
 
     // See the implementation of the getTwoImages() method below and complete the getAllImages() method
     public List<Image> getAllImages() {
-        Session session = openSession();
-        List<Image> images = session.createCriteria(Image.class).list();
-        commitSession(session);
-
-        return images;
+       //Write the method here
     }
 
 

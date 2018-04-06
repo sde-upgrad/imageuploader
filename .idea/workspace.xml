@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6afa42-0ad7-4d1b-b1db-bcd60ffcf220" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assignment_ImageHoster.iml" afterPath="$PROJECT_DIR$/Assignment_ImageHoster.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/JDBCConnector.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/JDBCConnector.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/forms/RegisterNewUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/forms/RegisterNewUser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/FileOperations.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/ImageManager.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/ImageManager.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/JDBCConnector.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/common/JDBCConnector.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/controller/ImageController.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/controller/ImageController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/forms/RegisterNewUser.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/forms/RegisterNewUser.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/model/Image.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/model/Image.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/ImageService.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/ImageService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/ImageServiceImp.class" afterPath="$PROJECT_DIR$/target/classes/com/upgrad/ImageHoster/service/ImageServiceImp.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/users/signup.html" afterPath="$PROJECT_DIR$/target/classes/templates/users/signup.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,15 +31,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state relative-caret-position="240">
+              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5456#5457#0" expanded="true" />
-                <element signature="e#5512#5513#0" expanded="true" />
+                <element signature="e#5536#5537#0" expanded="true" />
+                <element signature="e#5592#5593#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +58,8 @@
       <file leaf-file-name="ImageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,18 +70,18 @@
       <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="16" column="107" lean-forward="false" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+            <state relative-caret-position="833">
+              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="e#1517#1518#0" expanded="true" />
                 <element signature="e#1542#1543#0" expanded="true" />
@@ -124,8 +105,8 @@
       <file leaf-file-name="ImageService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="187">
+              <caret line="13" column="83" lean-forward="false" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -144,8 +125,8 @@
       <file leaf-file-name="ImageServiceImp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="21" column="74" lean-forward="false" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+            <state relative-caret-position="153">
+              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,13 +187,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/users/signin.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/users/signup.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java" />
       </list>
     </option>
   </component>
@@ -576,12 +557,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522327508775</updated>
       <workItem from="1522327517312" duration="16136000" />
-      <workItem from="1522646044347" duration="134258000" />
+      <workItem from="1522646044347" duration="134877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150394000" />
+    <option name="totallyTimeSpent" value="151013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -972,40 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="74" lean-forward="false" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/JDBCConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/FileOperations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1014,12 +961,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/service/ImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="83" lean-forward="false" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#2198#2199#0" expanded="true" />
+            <element signature="e#2244#2245#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1032,27 +1000,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/JDBCConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="969">
+          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/common/ImageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5456#5457#0" expanded="true" />
-            <element signature="e#5512#5513#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/model/Image.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="16" column="107" lean-forward="false" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/upgrad/ImageHoster/controller/ImageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding>
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2244#2245#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5536#5537#0" expanded="true" />
+            <element signature="e#5592#5593#0" expanded="true" />
           </folding>
         </state>
       </provider>

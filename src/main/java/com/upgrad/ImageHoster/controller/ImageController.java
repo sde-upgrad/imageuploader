@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class ImageController {
     // the landing page is landing.html
     @RequestMapping("/")
     public String landingPage(Model model) {
-        List<Image> list = imageService.getTwoImages();
+        ArrayList<Image> list = imageService.getTwoImages();
         model.addAttribute("images", list);
         return "landingpage";
     }
@@ -36,8 +37,8 @@ public class ImageController {
     @RequestMapping("/home")
     public String home(Model model) {
 
-        List<Image> list = imageService.getAll();
-        model.addAttribute("images", list);
+        ArrayList<Image> image =imageService.getAll();
+        model.addAttribute("images", image);
 
         return "home";
     }
@@ -83,7 +84,53 @@ public class ImageController {
         return "images/image";
     }
 
+    // The following method defines the action when you click on the delete button
+    @RequestMapping(value = "/images/{title}/delete")
+    public String deleteImage(@PathVariable String title, Model model) {
+        // Finding the image based upon its title
+        Image image = imageService.getByTitle(title);
+        // deleting the image by its title
+        imageService.deleteByTitle(image);
 
+        // redirecting to home once the action is complete
+        return "redirect:/home";
+    }
+
+    //mapping the edit image in the URL to the edit html page in the project
+    @RequestMapping("/images/{title}/edit")
+    public String editImage(@PathVariable String title, Model model) {
+        // Finding the image based upon its title
+        Image image = imageService.getByTitle(title);
+        model.addAttribute("image", image);
+
+        return "images/edit";
+    }
+
+    // The following method defines the action when you click on the edit button
+    @RequestMapping(value = "/editImage", method = RequestMethod.POST)
+    // @RequestParam is used to receive data from the html file
+    public String edit(@RequestParam("title") String title,
+                       @RequestParam("description") String description,
+                       @RequestParam("file") MultipartFile file) throws IOException {
+        Image image = imageService.getByTitle(title);
+        //Converting the new image received to base 64
+        String updatedImageData = convertUploadedFileToBase64(file);
+
+        // if the new image is empty then it means image is not updated, so setting the image to the previous image itself
+        if(updatedImageData.isEmpty())
+            image.setImageFile(image.getImageFile());
+            // else setting the new image to the updated image
+        else {image.setImageFile(updatedImageData);}
+
+        // setting the image description to the new description
+        image.setDescription(description);
+
+        // saving the changes done to the image to update it
+        imageService.save(image);
+
+        // redirecting back to the image page
+        return "redirect:/images/" + title;
+    }
 
 
     // create a unique id for the uploaded image file
@@ -96,3 +143,4 @@ public class ImageController {
         return Base64.getEncoder().encodeToString(file.getBytes());
     }
 }
+

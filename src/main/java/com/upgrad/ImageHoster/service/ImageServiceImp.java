@@ -4,6 +4,8 @@ import com.upgrad.ImageHoster.common.ImageManager;
 import com.upgrad.ImageHoster.model.Image;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,13 +37,13 @@ public class ImageServiceImp implements ImageService {
 
     // Gets two images from the uploaded images
     @Override
-    public List<Image> getTwoImages(){
+    public ArrayList<Image> getTwoImages(){
         return imageManager.getTwoImages();
     }
 
     // gets all the images that were uploaded
     @Override
-    public List<Image> getAll() {
+    public ArrayList<Image> getAll() {
         return imageManager.getAllImages();
     }
 
@@ -49,7 +51,7 @@ public class ImageServiceImp implements ImageService {
     @Override
     public void save(Image image) {
 
-        imageManager.writeToFile(image);
+        imageManager.writeToDatabase(image);
     }
 
     // get n most recent images
@@ -69,7 +71,7 @@ public class ImageServiceImp implements ImageService {
     // gets the image by its title
     @Override
     public Image getByTitle(String title) {
-        return imageManager.getImage(title);
+        return imageManager.getFromDatabaseByTitle(title);
     }
 
     // deletes image by its title

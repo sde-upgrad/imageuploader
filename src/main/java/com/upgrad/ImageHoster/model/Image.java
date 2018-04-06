@@ -26,6 +26,7 @@ public class Image implements Serializable {
         this.numView = 0;
         this.uploadDate = LocalDate.now();
     }
+    public Image(){}
 
     // Getters and Setters
     public Long getId() {

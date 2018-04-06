@@ -7,6 +7,9 @@ public class RegisterNewUser {
     private String username;
     private String password;
 
+    public RegisterNewUser(String username) {
+        this.username = username;
+    }
 
     public String getUsername() {
         return username;

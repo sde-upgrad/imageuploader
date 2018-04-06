@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 public interface UserService{
 
-   // User methods to be used
+    // User methods to be used
 
-   boolean login(String username, String password);
-   boolean register(User user);
+    boolean login(String username, String password);
+    boolean register(User user);
 }

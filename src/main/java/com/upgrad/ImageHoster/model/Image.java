@@ -1,5 +1,6 @@
 package com.upgrad.ImageHoster.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.io.Serializable;
 import java.util.Date;
@@ -7,15 +8,34 @@ import java.util.Date;
 // Serializable is used to pass the object instance into a hash function to convert it into bytes format
 // and then store it into the database as a row in the table
 // The byte stream created is platform independent, so object serialized on one platform can be deserialized on different platform
+
+// You need to declare the model as an entity, so that the system knows that it is a table in the database
+@Entity
+// with @Table annotation, you specify that image is the name of the table.
+@Table(name = "image")
 public class Image implements Serializable {
 
     // image attributes
-    private Long id;
+    @Id
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column
     private String title;
-    private String description; // adding this variable to give the description of the image
+
+    @Column
+    private String description;
+
+    @Column(columnDefinition="TEXT")
     private String imageFile; // this is a base64 encoded version of the image
-    private int numView; // adding this variable to find the number of views of each image
+
+    @Column
+    private int numView;
+
+    @Column
     private LocalDate uploadDate;
+
 
     // Constructor
     public Image(Long id, String title, String description, String imageFile) {
@@ -67,7 +87,7 @@ public class Image implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-        }
+    }
 
     public int getNumView() {
         return numView;

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class ImageController {
     // the landing page is landing.html
     @RequestMapping("/")
     public String landingPage(Model model) {
-        ArrayList<Image> list = imageService.getTwoImages();
+        List<Image> list = imageService.getTwoImages();
         model.addAttribute("images", list);
         return "landingpage";
     }
@@ -37,7 +36,7 @@ public class ImageController {
     @RequestMapping("/home")
     public String home(Model model) {
 
-        ArrayList<Image> image =imageService.getAll();
+        List<Image> image =imageService.getAll();
         model.addAttribute("images", image);
 
         return "home";
@@ -76,9 +75,9 @@ public class ImageController {
         // Finding the image based upon its title
         Image image = imageService.getByTitle(title);
         // Incrementing the numview by 1 if this page is open
-        image.setNumView(image.getNumView() + 1);
+         image.setNumView(image.getNumView() + 1);
         // Saving the image details to update the image
-        imageService.save(image);
+        imageService.update(image);
         model.addAttribute("image", image);
 
         return "images/image";
@@ -126,7 +125,7 @@ public class ImageController {
         image.setDescription(description);
 
         // saving the changes done to the image to update it
-        imageService.save(image);
+        imageService.update(image);
 
         // redirecting back to the image page
         return "redirect:/images/" + title;

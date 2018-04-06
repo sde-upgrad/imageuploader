@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class JDBCConnector {
     private static final String DB_DRIVER = "org.postgresql.Driver";
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/imgag?user=postgres&password=123";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/im?user=postgres&password=123";
 
 
     private Connection connection = null;

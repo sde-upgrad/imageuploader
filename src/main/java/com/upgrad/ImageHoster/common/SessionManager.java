@@ -17,7 +17,7 @@ public class SessionManager {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Image.class);
         configuration.addAnnotatedClass(User.class);
-        configuration.addAnnotatedClass(ProfilePhoto.class);
+        // Add the ProfilePhoto class as an annotated class here
 
         configuration.configure("hibernate.cfg.xml");
 

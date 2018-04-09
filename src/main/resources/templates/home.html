@@ -37,6 +37,7 @@
     <!-- In ImageController images was a list, so here image indicates each element of the images list-->
     <article class="fl w-100 w-50-m  w-25-ns pa2-ns"  th:each="image : ${images}">
         <div class="aspect-ratio aspect-ratio--1x1">
+            <img class="db bg-center cover userImage" th:style="'background:url(data:profilephoto/jpeg;base64,'+${profilephoto.profileImageData} + ');'" />
             <img class="db bg-center cover aspect-ratio--object" th:style="'background:url(data:image/jpeg;base64,'+${image.imageFile} + ');'" />
             </hr>
         </div>

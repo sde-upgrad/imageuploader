@@ -1,7 +1,6 @@
 package com.upgrad.ImageHoster.controller;
 
 import com.google.common.hash.Hashing;
-import com.upgrad.ImageHoster.forms.RegisterNewUser;
 import com.upgrad.ImageHoster.model.ProfilePhoto;
 import com.upgrad.ImageHoster.model.User;
 import com.upgrad.ImageHoster.service.ProfilePhotoService;
@@ -16,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 @Controller
@@ -89,16 +87,21 @@ public class UserController {
         return "redirect:/users/signin";
     }
 
+
+    //Mapping the URL for signout
     @RequestMapping(value = "/signout")
     public String signOut(HttpSession session) {
         session.removeAttribute("currUser");
         return "redirect:/";
     }
 
+    // mapping the profile page, in the URL to the profile html file in the project
+    // the following method displays the main profile page
     @RequestMapping(value = "/users/edit_profile")
     public String editProfile(HttpSession session, Model model) {
         User currUser = (User)session.getAttribute("currUser");
 
+        // If the current user is null then redirect to home, else open the profile page of user
         if(currUser == null ){
             return "redirect:/home";
         }
@@ -109,7 +112,8 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/users/edit_profile", method = RequestMethod.POST)
+
+    //Write the mapping for the action on clicking the user profile button on the homepage
     public String editUserProfile(@RequestParam("description") String description,
                                   @RequestParam("file") MultipartFile file,
                                   HttpSession session,
@@ -122,12 +126,9 @@ public class UserController {
         photo.setprofileImageData(photoDataAsBase64);
         profilePhotoService.update(photo);
 
-        // update user data
-        currUser.setDescription(description);
-        currUser.setProfilePhoto(photo);
-        userService.update(currUser);
+        // Set the description and profilePhoto of current user and run the update method from userservice
 
-        return "redirect:/home";
+        // Write the return statement to redirect to home
     }
 
 

@@ -39,9 +39,11 @@ public class ImageController {
     // the following method displays the home page
     @RequestMapping("/home")
     public String home(HttpSession session,Model model) {
-
+    //Getting the session details
         List<Image> image =imageService.getAll();
         model.addAttribute("images", image);
+
+        // Setting the current User as currUser by taking it from session
         User currUser = (User)session.getAttribute("currUser");
         ProfilePhoto photo = currUser.getProfilePhoto();
         model.addAttribute("profilephoto",photo);

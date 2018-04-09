@@ -14,6 +14,7 @@
         <property name="hibernate.current_session_context_class">managed</property>
 
         <!-- run once: create our tables in database-->
+        <!-- If you run it more than once then new tables will be created and previous data will be deleted-->
         <!--<property name="hbm2ddl.auto">create</property>-->
 
     </session-factory>

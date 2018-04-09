@@ -10,7 +10,9 @@
 </head>
 
 <body class="sans-serif">
-
+    <div th:if="${error}" class="flex items-center justify-center pa4 bg-light-red black" >
+        <h3 class="lh-title ml3">Incorrect username or password</h3>
+    </div>
 
 <main class="pa4 black-80">
 

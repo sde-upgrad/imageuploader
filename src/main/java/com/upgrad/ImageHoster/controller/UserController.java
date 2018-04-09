@@ -6,10 +6,16 @@ import com.upgrad.ImageHoster.model.User;
 import com.upgrad.ImageHoster.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 @Controller
 public class UserController {
@@ -18,45 +24,63 @@ public class UserController {
 
     // mapping the sign-in in the URL to the sign-in html page in the project
     // the following method displays the main sign-in page
-    @RequestMapping("/users/signin")
-    public String signin(RegisterNewUser registerNewUser) {
-        return "users/signin";
+    @RequestMapping(value = "/users/signin")
+    public String signIn(HttpSession session) {
+
+            return "users/signin";
     }
 
-
-    // mapping the sign-in, in the URL to the sign-in html page in the project
-    // The following method defines the action when you click on the sign in button
     @RequestMapping(value = "/users/signin", method = RequestMethod.POST)
-    public String signinPage(RegisterNewUser registerNewUser) {
+    public String signInUser(@RequestParam("username") String username,
+                             @RequestParam("password") String password,
+                             Model model,
+                             HttpSession session) {
+        User user = userService.login(username, password);
 
-        //If condition written below verifies that username and password is valid or not
-        if (userService.login(registerNewUser.getUsername(), registerNewUser.getPassword())) {
-            // after login is successful, redirect the user to the home page
+        if (user != null ) {
             return "redirect:/home";
+        } else {
+            String errors = "incorrect username or password";
+            model.addAttribute("error", errors);
+
+            return "redirect:/users/signin";
         }
-        return "redirect:/";
     }
+
 
 
     // mapping the sign-up, in the URL to the signup html file in the project
     // the following method displays the main sign-up page
-    @RequestMapping("/users/signup")
-    public String signup(RegisterNewUser registerNewUser) {
-        return "users/signup";
+
+    // Write the request mapping here
+    public String signUp() {
+        //Write the return statement
     }
 
-    // mapping the sign-up, in the URL to the signup html file in the project
-    // The following method defines the action when you click on the sign-up button
     @RequestMapping(value = "/users/signup", method = RequestMethod.POST)
-    public String signupPage(RegisterNewUser registerNewUser) {
-        // here you may consider that every user is valid, so that each registration is successful, even if empty
-        boolean isValid = true;
-        if (isValid)  {
-            // after sign up is successful, redirect the user to the login page
-            return "redirect:/users/signin";
-        }
-        return "redirect:/";
+    public String signUpUser(@RequestParam("username") String username,
+                             @RequestParam("password") String password) {
+
+        String passwordHash = hashPassword(password);
+        User user = new User(username, passwordHash);
+
+        // invoke the userservice to implement register
+
+        // write the return statetment here
     }
 
+    // This is used to convert the image file into base 64 format
+    private String convertUploadedFileToBase64(MultipartFile file) throws IOException {
+        return Base64.getEncoder().encodeToString(file.getBytes());
+    }
+
+    // This is used to convert password to a hashpassword
+    private String hashPassword(String password) {
+        String passwordHash = Hashing.sha256()
+                .hashString(password)
+                .toString();
+
+        return passwordHash;
+    }
 
 }

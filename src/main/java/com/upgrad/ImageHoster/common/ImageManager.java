@@ -4,6 +4,7 @@ import com.upgrad.ImageHoster.model.Image;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.*;
@@ -20,6 +21,7 @@ public class ImageManager extends SessionManager{
 
         // creating an object of ImageManager
         ImageManager imageManager = new ImageManager();
+        System.out.println(imageManager.getNumberOfImages());
 
     }
 
@@ -30,7 +32,11 @@ public class ImageManager extends SessionManager{
 
     // See the implementation of the getTwoImages() method below and complete the getAllImages() method
     public List<Image> getAllImages() {
-       //Write the method here
+        Session session = openSession();
+        List<Image> images = session.createCriteria(Image.class).list();
+        commitSession(session);
+
+        return images;
     }
 
 
@@ -43,6 +49,14 @@ public class ImageManager extends SessionManager{
         commitSession(session);
 
         return images;
+    }
+
+
+    public long getNumberOfImages() {
+        Session session = openSession();
+        Long numImages = (Long) session.createCriteria(Image.class).setProjection(Projections.rowCount()).uniqueResult();
+        commitSession(session);
+        return numImages;
     }
 
     // retrieves image by its title from the database by searching all the images

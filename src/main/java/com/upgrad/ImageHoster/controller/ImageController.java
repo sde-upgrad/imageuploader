@@ -37,7 +37,7 @@ public class ImageController {
     @RequestMapping("/home")
     public String home(Model model) {
 
-        List<Image> image =imageService.getTwoImages();
+        List<Image> image =imageService.getAll();
         model.addAttribute("images", image);
 
         return "home";

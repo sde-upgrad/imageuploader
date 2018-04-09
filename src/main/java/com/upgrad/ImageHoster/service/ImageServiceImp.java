@@ -15,7 +15,8 @@ public class ImageServiceImp implements ImageService {
         imageManager = new ImageManager();
     }
 
-    //***** Implement the getAll() method here
+    @Override
+    public List<Image> getAll() { return imageManager.getAllImages(); }
 
     @Override
     public List<Image> getTwoImages() { return imageManager.getTwoImages(); }

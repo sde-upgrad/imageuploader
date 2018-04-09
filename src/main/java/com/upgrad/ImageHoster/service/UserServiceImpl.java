@@ -1,28 +1,32 @@
 package com.upgrad.ImageHoster.service;
 
+import com.upgrad.ImageHoster.common.UserManager;
 import com.upgrad.ImageHoster.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private UserManager userManager;
 
-    // Implementation of methods mentioned in the User Service
-
-    // Method written below verifies that username = "upgrad" and password = "sde"
-    // This just a basic check for login, but you will be able to register new user and login based upon that user in the further module
-    public boolean login(String username, String password){
-        if(username.equals("upgrad")  && password.equals("sde")) {
-            return true;
-        } else {
-            return false;
-        }
+    public UserServiceImpl() {
+        userManager = new UserManager();
     }
 
     @Override
-    // this is a dummy register method
-    // currently you may consider every registration as correct
-    public boolean register(User user) {
-        return true;
+    public User login(String username, String password){
+        //write the return statement to invoke the loginUser method in usermanager
     }
+
+    @Override
+    public User getByName(String username) {
+        return userManager.getUserByName(username);
+    }
+
+    @Override
+    public boolean register(User user) {
+        //Write the return statement to invoke register method in usermanager
+        // Return true if user is not null, else false
+    }
+
 
 }

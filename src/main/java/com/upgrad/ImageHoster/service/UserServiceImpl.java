@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(String username, String password){
-        //write the return statement to invoke the loginUser method in usermanager
+        return userManager.loginUser(username, password);
     }
 
     @Override
@@ -24,8 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean register(User user) {
-        //Write the return statement to invoke register method in usermanager
-        // Return true if user is not null, else false
+        if (userManager.registerUser(user) != null) {
+            return true;
+        }
+
+        return false;
     }
 
 

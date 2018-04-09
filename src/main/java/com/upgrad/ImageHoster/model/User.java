@@ -4,17 +4,20 @@ package com.upgrad.ImageHoster.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-//Please add annotation to make it a table
- // postgres doesn't allow table named "user" so change the name of the table
+
+@Entity
+@Table(name = "user1") // postgres doesn't allow table named "user"
 public class User implements Serializable {
 
-//Please  add annotations for id to make it a column and a primary key
+    @Id
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-//Please add annotation to make it a column
+    @Column
     private String username;
 
-    //Please add annotation to make it a column
+    @Column
     private String passwordHash;
 
 

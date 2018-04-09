@@ -52,9 +52,9 @@ public class UserController {
     // mapping the sign-up, in the URL to the signup html file in the project
     // the following method displays the main sign-up page
 
-    // Write the request mapping here
+    @RequestMapping(value = "/users/signup")
     public String signUp() {
-        //Write the return statement
+        return "users/signup";
     }
 
     @RequestMapping(value = "/users/signup", method = RequestMethod.POST)
@@ -63,10 +63,9 @@ public class UserController {
 
         String passwordHash = hashPassword(password);
         User user = new User(username, passwordHash);
+        userService.register(user);
 
-        // invoke the userservice to implement register
-
-        // write the return statetment here
+        return "redirect:/users/signin";
     }
 
     // This is used to convert the image file into base 64 format

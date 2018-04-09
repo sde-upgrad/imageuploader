@@ -23,6 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getByNameWithProfilePhoto(String username) {
+        return userManager.getUserByUsernameWithJoins(username);
+    }
+
+    @Override
     public boolean register(User user) {
         if (userManager.registerUser(user) != null) {
             return true;
@@ -30,6 +35,7 @@ public class UserServiceImpl implements UserService {
 
         return false;
     }
-
+    @Override
+    public void update(User user) { userManager.update(user); }
 
 }

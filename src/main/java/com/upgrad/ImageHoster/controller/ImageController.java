@@ -1,6 +1,8 @@
 package com.upgrad.ImageHoster.controller;
 
 import com.upgrad.ImageHoster.model.Image;
+import com.upgrad.ImageHoster.model.ProfilePhoto;
+import com.upgrad.ImageHoster.model.User;
 import com.upgrad.ImageHoster.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
@@ -35,11 +38,13 @@ public class ImageController {
     // mapping the home in the URL to the home html page in the project
     // the following method displays the home page
     @RequestMapping("/home")
-    public String home(Model model) {
+    public String home(HttpSession session,Model model) {
 
         List<Image> image =imageService.getAll();
         model.addAttribute("images", image);
-
+        User currUser = (User)session.getAttribute("currUser");
+        ProfilePhoto photo = currUser.getProfilePhoto();
+        model.addAttribute("profilephoto",photo);
         return "home";
     }
 

@@ -21,12 +21,18 @@ public class User implements Serializable {
     private String passwordHash;
 
 
+    @Column()
+    private String description;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private ProfilePhoto profilePhoto;
     // Constructor
-    public User(String username, String passwordHash) {
+    public User() { }
+
+    public User(String username, String passwordHash, ProfilePhoto photo) {
         this.username = username;
         this.passwordHash = passwordHash;
-    }
-    public User() {
+        this.profilePhoto = photo;
     }
 
     // Getters and Setters
@@ -45,4 +51,12 @@ public class User implements Serializable {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
+    public ProfilePhoto getProfilePhoto() { return profilePhoto; }
+
+    public void setProfilePhoto(ProfilePhoto profilePhoto) { this.profilePhoto = profilePhoto; }
 }

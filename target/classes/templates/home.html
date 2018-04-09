@@ -19,19 +19,26 @@
         <h3 color="red pa0">Welcome to your Homepage</h3>
 
     </a>
+
     <div class="dtc v-mid w-75 tr">
 
         <!-- Upload Image button in navigation bar-->
-        <a class="link dim blue link pointer f6 f5-ns dib" href="/upload" title="Upload">Upload Image</a>
-
+        <div th:if="${session.currUser}">
+            <img class="db bg-center cover userImage" th:style="'background:url(data:profilephoto/jpeg;base64,'+${profilephoto.profileImageData} + ');'" />
+            <a class="black link pointer f6 f5-l dib mr3 mr4-l" href="/users/edit_profile" title="Edit Profile">User Profile</a>
+            <a class="black link pointer f6 f5-l dib mr3 mr4-l" href="/signout" title="Log out">Sign out</a>
+            <a class="b f6 link dim ph3 pv2 mb2 dib white bg-black" href="/upload" title="Upload">Upload Image</a>
+        </div>
     </div>
 </nav>
+
 <section class="cf w-100 pa2-ns">
 
     <!-- In ImageController images was a list, so here image indicates each element of the images list-->
     <article class="fl w-100 w-50-m  w-25-ns pa2-ns"  th:each="image : ${images}">
         <div class="aspect-ratio aspect-ratio--1x1">
             <img class="db bg-center cover aspect-ratio--object" th:style="'background:url(data:image/jpeg;base64,'+${image.imageFile} + ');'" />
+            </hr>
         </div>
 
         <!--Displaying the image title and creating it as a link so that on clicking it user can be redirected to specific image page-->
@@ -40,6 +47,8 @@
         </a>
         <h3 class="f6 f5 fw4 mt2 black-60" th:text="${image.uploadDate}">Subtitle of piece</h3>
     </article>
+
+    
 </section>
 
 </body>

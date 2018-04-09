@@ -2,6 +2,7 @@ package com.upgrad.ImageHoster.common;
 
 import com.google.common.hash.Hashing;
 import com.upgrad.ImageHoster.model.User;
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -18,6 +19,24 @@ public class UserManager extends SessionManager {
     }
 
 
+
+    public User getUserByUsernameWithJoins(final String username) {
+        Session session = openSession();
+
+        try {
+            User user = (User)session.createCriteria(User.class)
+                    .add(Restrictions.eq("username", username))
+                    .uniqueResult();
+            Hibernate.initialize(user.getProfilePhoto()); // same as doing a join on images table
+            commitSession(session);
+
+            return user;
+        } catch(HibernateException e) {
+            System.out.println("unable to retrieve an image from database by its username with joins");
+        }
+
+        return null;
+    }
 
     public User getUserByName(final String username) {
         Session session = openSession();
@@ -36,6 +55,17 @@ public class UserManager extends SessionManager {
         return null;
     }
 
+    public void update(final User user) {
+        Session session = openSession();
+        session.update(user);
+        commitSession(session);
+    }
+
+    public void deleteUser(final User user) {
+        Session session = openSession();
+        session.delete(user);
+        commitSession(session);
+    }
 
 
     public User loginUser(final String username, final String password) {

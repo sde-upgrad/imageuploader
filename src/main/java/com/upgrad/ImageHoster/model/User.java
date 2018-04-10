@@ -3,6 +3,8 @@ package com.upgrad.ImageHoster.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -26,6 +28,10 @@ public class User implements Serializable {
 
     @OneToOne(fetch = FetchType.EAGER)
     private ProfilePhoto profilePhoto;
+
+    // Write the annotation to map user with image using one to many relation and it should be mapped by user
+    private List<Image> images = new ArrayList<Image>();
+
     // Constructor
     public User() { }
 
@@ -59,4 +65,10 @@ public class User implements Serializable {
     public ProfilePhoto getProfilePhoto() { return profilePhoto; }
 
     public void setProfilePhoto(ProfilePhoto profilePhoto) { this.profilePhoto = profilePhoto; }
+
+    public List<Image> getImages() { return images; }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
 }

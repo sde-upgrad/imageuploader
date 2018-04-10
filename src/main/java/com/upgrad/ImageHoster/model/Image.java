@@ -36,14 +36,18 @@ public class Image implements Serializable {
     @Column
     private LocalDate uploadDate;
 
+    // Write the annotation to map image with user as many to one
+    private User user;
+
 
     // Constructor
-    public Image(Long id, String title, String description, String imageFile) {
+    public Image(Long id, String title, String description, String imageFile, User user) {
         this.id = id;
         this.description = description;
         this.title = title;
         this.imageFile = imageFile;
         this.numView = 0;
+        this.user = user;
         this.uploadDate = LocalDate.now();
     }
     public Image(){}

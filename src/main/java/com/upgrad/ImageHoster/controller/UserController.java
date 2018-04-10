@@ -101,7 +101,7 @@ public class UserController {
     public String editProfile(HttpSession session, Model model) {
         User currUser = (User)session.getAttribute("currUser");
 
-        // If the current user is null then redirect to home, else open the profile page of user
+
         if(currUser == null ){
             return "redirect:/home";
         }
@@ -112,8 +112,7 @@ public class UserController {
         }
     }
 
-
-    //Write the mapping for the action on clicking the user profile button on the homepage
+    @RequestMapping(value = "/users/edit_profile", method = RequestMethod.POST)
     public String editUserProfile(@RequestParam("description") String description,
                                   @RequestParam("file") MultipartFile file,
                                   HttpSession session,
@@ -126,9 +125,12 @@ public class UserController {
         photo.setprofileImageData(photoDataAsBase64);
         profilePhotoService.update(photo);
 
-        // Set the description and profilePhoto of current user and run the update method from userservice
+        // update user data
+        currUser.setDescription(description);
+        currUser.setProfilePhoto(photo);
+        userService.update(currUser);
 
-        // Write the return statement to redirect to home
+        return "redirect:/home";
     }
 
 

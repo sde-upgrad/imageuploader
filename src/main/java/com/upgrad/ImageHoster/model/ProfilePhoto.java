@@ -16,12 +16,13 @@ public class ProfilePhoto implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    // Setting the profileImageData as TEXT
     @Column(columnDefinition="TEXT")
     private String profileImageData; // base64 version of the profile image;
 
     //Constructor
     public ProfilePhoto() {
-        // Pass the defaultAvatarBase64 in the constructor here
+        this.profileImageData = defaultAvatarBase64;
     }
 
     public ProfilePhoto(String photoImageData) {

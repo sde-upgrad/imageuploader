@@ -53,10 +53,20 @@ public class ImageController {
     // mapping the upload in the URL to the upload html page in the project
     // the following method displays the upload page
     @RequestMapping("/upload")
-    public String upload(Model model) {
+    public String upload(HttpSession session) {
+        // Get details about the current user
+        User currUser = (User) session.getAttribute("currUser");
 
-        return "/upload";
+        // If the current user is null then redirect back to homepage, else redirect to upload page
+        // We are checking it to make sure a user is able to upload an image if and only if they are logged in and the session has been started
+        if(currUser == null ){
+            return "redirect:/";
+        }
+        else {
+            return "/upload";
+        }
     }
+
 
     // mapping the upload in the URL to the upload html page in the project
     // The following method defines the action when you click on the upload button
@@ -64,12 +74,20 @@ public class ImageController {
     // defining the upload
     public String uploadFile(@RequestParam("title") String title,
                              @RequestParam("description") String description,
-                             @RequestParam("file") MultipartFile file) throws IOException {
-        // creating an ide of the image
+                             @RequestParam("file") MultipartFile file,
+                             HttpSession session) throws IOException {
+
+        User currUser = (User) session.getAttribute("currUser");
+
+        if(currUser == null ){
+            return "redirect:/";
+        }
+
+        // creating an id of the image
         Long imageId = createId();
         // uploading the image and converting it to a base64 encoded version of the image
         String uploadedImageData = convertUploadedFileToBase64(file);
-        Image newImage = new Image(imageId, title,description, uploadedImageData);
+        Image newImage = new Image(imageId, title,description, uploadedImageData,currUser);
         // storing the new image
         imageService.save(newImage);
         // after upload is successful, redirect the user to the home page

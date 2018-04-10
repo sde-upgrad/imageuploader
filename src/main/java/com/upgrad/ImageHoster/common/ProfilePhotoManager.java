@@ -17,6 +17,9 @@ public class ProfilePhotoManager extends SessionManager {
 
     //Creating method to update Profile Photo data
     public void updateProfilePhoto(final ProfilePhoto updatedphoto) {
-    // Open a session, then update the session and finally commit the session
+
+        Session session = openSession();
+        session.update(updatedphoto);
+        commitSession(session);
     }
 }

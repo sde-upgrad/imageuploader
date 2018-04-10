@@ -16,8 +16,8 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService  {
     }
 
     @Override
-    public void save(ProfilePhoto photo){ //Call the saveProfilePhoto method in profilePhotoManager here. }
+    public void save(ProfilePhoto photo){ profilePhotoManager.saveProfilePhoto(photo); }
 
     @Override
-    public void update(ProfilePhoto photo){ //Call the updateProfilePhoto method in profilePhotoManager here. }
+    public void update(ProfilePhoto photo){ profilePhotoManager.updateProfilePhoto(photo); }
 }

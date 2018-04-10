@@ -32,9 +32,6 @@ public class TagManager extends SessionManager {
 
         //Start a session, then get the list of all tags into "tags" by using session.createCriteria and then finally commit the session
 
-        Session session = openSession();
-        List<Tag> tags = session.createCriteria(Tag.class).list();
-        commitSession(session);
 
         return tags;
     }

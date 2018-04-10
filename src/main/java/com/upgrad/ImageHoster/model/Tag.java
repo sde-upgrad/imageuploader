@@ -16,7 +16,7 @@ public class Tag {
     private String name;
 
     // Write the annotation for many to many between images and tags where they are mapped by tags
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "tags")
+
     private List<Image> images;
 
 

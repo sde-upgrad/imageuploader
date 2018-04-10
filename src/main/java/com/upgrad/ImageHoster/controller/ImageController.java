@@ -142,8 +142,7 @@ public class ImageController {
 
         // Get the tag list and convert the list into a single string using "convertTagsToString" method defined below,
         // then add it as an attribute and pass it onto the view as the name "tags"
-        String tags = convertTagsToString(image.getTags());
-        model.addAttribute("tags",tags);
+
         model.addAttribute("image", image);
         return "images/edit";
     }

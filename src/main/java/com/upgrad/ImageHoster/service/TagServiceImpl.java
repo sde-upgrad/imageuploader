@@ -16,16 +16,16 @@ public class TagServiceImpl implements TagService {
 
     public List<Tag> getAll() {
         //add the return statement to call the appropriate function for tagManager
-        return tagManager.getAllTags();
+
     }
 
     public Tag getByName(String title) {
         //add the return statement to call the appropriate function for tagManager
-        return tagManager.findTag(title);
+
     }
 
     public Tag createTag(Tag tag) {
         //add the return statement to call the appropriate function for tagManager
-        return tagManager.createTag(tag);
+        
     }
 }

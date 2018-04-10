@@ -29,7 +29,7 @@ public class User implements Serializable {
     @OneToOne(fetch = FetchType.EAGER)
     private ProfilePhoto profilePhoto;
 
-    // Write the annotation to map user with image using one to many relation and it should be mapped by user
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Image> images = new ArrayList<Image>();
 
     // Constructor

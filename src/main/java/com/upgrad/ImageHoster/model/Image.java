@@ -36,7 +36,7 @@ public class Image implements Serializable {
     @Column
     private LocalDate uploadDate;
 
-    // Write the annotation to map image with user as many to one
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
 

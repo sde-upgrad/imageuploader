@@ -88,19 +88,17 @@ public class UserController {
     }
 
 
-    //Mapping the URL for signout
+    //Mapping the URL for signout with the landing page
     @RequestMapping(value = "/signout")
     public String signOut(HttpSession session) {
         session.removeAttribute("currUser");
         return "redirect:/";
     }
 
-    // mapping the profile page, in the URL to the profile html file in the project
-    // the following method displays the main profile page
+    // Mapping the URL of User Profile with the Edit Profile Page
     @RequestMapping(value = "/users/edit_profile")
     public String editProfile(HttpSession session, Model model) {
         User currUser = (User)session.getAttribute("currUser");
-
 
         if(currUser == null ){
             return "redirect:/home";
@@ -122,7 +120,11 @@ public class UserController {
         // update photo data
         ProfilePhoto photo = currUser.getProfilePhoto();
         String photoDataAsBase64 = convertUploadedFileToBase64(file);
-        photo.setprofileImageData(photoDataAsBase64);
+        // If the new profile photo is empty set it back to the initial profile photo else set it to the new photo
+        if(photoDataAsBase64.isEmpty())
+            photo.setprofileImageData(photo.getProfileImageData());
+
+        else {photo.setprofileImageData(photoDataAsBase64);}
         profilePhotoService.update(photo);
 
         // update user data

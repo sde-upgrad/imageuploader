@@ -2,8 +2,11 @@ package com.upgrad.ImageHoster.controller;
 
 import com.upgrad.ImageHoster.model.Image;
 import com.upgrad.ImageHoster.model.ProfilePhoto;
+import com.upgrad.ImageHoster.model.Tag;
 import com.upgrad.ImageHoster.model.User;
 import com.upgrad.ImageHoster.service.ImageService;
+import com.upgrad.ImageHoster.service.TagService;
+import com.upgrad.ImageHoster.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +18,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.StringTokenizer;
 
 
 @Controller
@@ -24,6 +29,9 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
+
+    @Autowired
+    private TagService tagService;
 
     // mapping the default/landing page when website url is called, here default url is http://localhost/80xx
     // the landing page is landing.html
@@ -75,6 +83,7 @@ public class ImageController {
     public String uploadFile(@RequestParam("title") String title,
                              @RequestParam("description") String description,
                              @RequestParam("file") MultipartFile file,
+                             @RequestParam("tags") String tags,
                              HttpSession session) throws IOException {
 
         User currUser = (User) session.getAttribute("currUser");
@@ -83,28 +92,32 @@ public class ImageController {
             return "redirect:/";
         }
 
-        // creating an id of the image
-        Long imageId = createId();
-        // uploading the image and converting it to a base64 encoded version of the image
-        String uploadedImageData = convertUploadedFileToBase64(file);
-        Image newImage = new Image(imageId, title,description, uploadedImageData,currUser);
-        // storing the new image
-        imageService.save(newImage);
-        // after upload is successful, redirect the user to the home page
-        return "redirect:/home";
+        else {
+            List<Tag> imageTags = findOrCreateTags(tags);
+            // creating an id of the image
+            Long imageId = createId();
+            // uploading the image and converting it to a base64 encoded version of the image
+            String uploadedImageData = convertUploadedFileToBase64(file);
+            Image newImage = new Image(imageId, title, description, uploadedImageData, currUser, imageTags);
+            // storing the new image
+            imageService.save(newImage);
+            // after upload is successful, redirect the user to the home page
+            return "redirect:/home";
+        }
     }
 
 
     //mapping the image in the URL to the image html page in the project
     @RequestMapping("/images/{title}")
     public String showImage(@PathVariable String title, Model model) {
-        // Finding the image based upon its title
-        Image image = imageService.getByTitle(title);
+        // Finding the image based upon its title by using joins because we need only those instances which contain the tags as we have to pass the tags to the view
+        Image image = imageService.getByTitleWithJoin(title);
         // Incrementing the numview by 1 if this page is open
          image.setNumView(image.getNumView() + 1);
         // Saving the image details to update the image
         imageService.update(image);
         model.addAttribute("image", image);
+        model.addAttribute("tags", image.getTags());
 
         return "images/image";
     }
@@ -124,10 +137,14 @@ public class ImageController {
     //mapping the edit image in the URL to the edit html page in the project
     @RequestMapping("/images/{title}/edit")
     public String editImage(@PathVariable String title, Model model) {
-        // Finding the image based upon its title
-        Image image = imageService.getByTitle(title);
-        model.addAttribute("image", image);
+        // Finding the image based upon its title by using joins because we need only those instances which contain the tags as we have to pass the tags to the view
+        Image image = imageService.getByTitleWithJoin(title);
 
+        // Get the tag list and convert the list into a single string using "convertTagsToString" method defined below,
+        // then add it as an attribute and pass it onto the view as the name "tags"
+        String tags = convertTagsToString(image.getTags());
+        model.addAttribute("tags",tags);
+        model.addAttribute("image", image);
         return "images/edit";
     }
 
@@ -136,9 +153,11 @@ public class ImageController {
     // @RequestParam is used to receive data from the html file
     public String edit(@RequestParam("title") String title,
                        @RequestParam("description") String description,
-                       @RequestParam("file") MultipartFile file) throws IOException {
+                       @RequestParam("file") MultipartFile file,
+                       @RequestParam("tags") String tags) throws IOException {
         Image image = imageService.getByTitle(title);
         //Converting the new image received to base 64
+        List<Tag> imageTags = findOrCreateTags(tags);
         String updatedImageData = convertUploadedFileToBase64(file);
 
         // if the new image is empty then it means image is not updated, so setting the image to the previous image itself
@@ -146,6 +165,9 @@ public class ImageController {
             image.setImageFile(image.getImageFile());
             // else setting the new image to the updated image
         else {image.setImageFile(updatedImageData);}
+
+        // setting the image tags
+        image.setTags(imageTags);
 
         // setting the image description to the new description
         image.setDescription(description);
@@ -167,5 +189,37 @@ public class ImageController {
     private String convertUploadedFileToBase64(MultipartFile file) throws IOException {
         return Base64.getEncoder().encodeToString(file.getBytes());
     }
+
+    private List<Tag> findOrCreateTags(String tagNames) {
+        StringTokenizer st = new StringTokenizer(tagNames, ",");
+        List<Tag> tags = new ArrayList<Tag>();
+
+        while(st.hasMoreTokens()) {
+            String tagName = st.nextToken().trim();
+            Tag tag = tagService.getByName(tagName);
+
+            if(tag == null) {
+                Tag newTag = new Tag(tagName);
+                tag = tagService.createTag(newTag);
+            }
+
+            tags.add(tag);
+        }
+
+        return tags;
+    }
+    private String convertTagsToString (List<Tag> tags) {
+        StringBuilder tagString = new StringBuilder();
+
+        for(int i = 0; i <= tags.size() - 2; i++) {
+            tagString.append(tags.get(i).getName()).append(", ");
+        }
+
+        Tag lastTag = tags.get(tags.size() - 1);
+        tagString.append(lastTag.getName());
+
+        return tagString.toString();
+    }
+
 }
 

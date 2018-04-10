@@ -3,7 +3,9 @@ package com.upgrad.ImageHoster.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 // Serializable is used to pass the object instance into a hash function to convert it into bytes format
 // and then store it into the database as a row in the table
@@ -36,18 +38,27 @@ public class Image implements Serializable {
     @Column
     private LocalDate uploadDate;
 
+    // Here many to one relationship between the image and the user is annotated
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
+    // Here Join is used to create a new table called "Image_Tag" containing two columns "image_id" and "tag_id"
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name="Image_Tag",
+            joinColumns = { @JoinColumn(name = "image_id")},
+            inverseJoinColumns = { @JoinColumn(name = "tag_id")})
+    private List<Tag> tags = new ArrayList<Tag>();
+
 
     // Constructor
-    public Image(Long id, String title, String description, String imageFile, User user) {
+    public Image(Long id, String title, String description, String imageFile, User user, List<Tag> tags) {
         this.id = id;
         this.description = description;
         this.title = title;
         this.imageFile = imageFile;
         this.numView = 0;
         this.user = user;
+        this.tags = tags;
         this.uploadDate = LocalDate.now();
     }
     public Image(){}
@@ -100,4 +111,13 @@ public class Image implements Serializable {
     public void setNumView(int numView) {
         this.numView = numView;
     }
+
+    public void setUser(User user) { this.user = user; }
+
+    public User getUser() { return this.user; }
+
+    public List<Tag> getTags() { return tags; }
+
+    public void setTags(List<Tag> tags) { this.tags = tags; }
+
 }

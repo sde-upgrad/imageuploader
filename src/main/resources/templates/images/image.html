@@ -36,6 +36,13 @@
     <!--Displaying the number of views of the image-->
     <p class="grey f6" th:text="${image.numView} + ' views'">Num Views</p>
 
+    <!--Displaying the tags assigned to the image-->
+    <ul class="list mt0 mb5 pl0">
+        <li th:each="tag : ${tags}" class="dib">
+            <p class="f6 link dim ba ph3 pv2 mb2 dib black mr2" th:text="${tag.name}">Tag name</p>
+        </li>
+    </ul>
+
     <!--Displaying the description of the image-->
     <h5 class="f4 mb0">Description</h5>
     <p class="measure lh-copy mt2" th:text="${image.description}">text</p>

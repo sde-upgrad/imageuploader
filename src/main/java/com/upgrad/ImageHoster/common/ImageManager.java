@@ -1,6 +1,7 @@
 package com.upgrad.ImageHoster.common;
 
 import com.upgrad.ImageHoster.model.Image;
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -78,6 +79,23 @@ public class ImageManager extends SessionManager{
         return null;
     }
 
+    public Image getImageByTitleWithJoins(final String title) {
+        Session session = openSession();
+
+        try {
+            Image image = (Image)session.createCriteria(Image.class)
+                    .add(Restrictions.eq("title", title))
+                    .uniqueResult();
+            Hibernate.initialize(image.getTags()); // doing a join on tags table
+            commitSession(session);
+
+            return image;
+        } catch(HibernateException e) {
+            System.out.println("unable to retrieve an image from database by its title");
+        }
+
+        return null;
+    }
     // saves image details into the database
     public void writeToDatabase(final Image image) {
         Session session = openSession();

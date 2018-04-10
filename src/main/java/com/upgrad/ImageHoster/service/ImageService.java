@@ -8,6 +8,7 @@ public interface ImageService{
 
     List<Image> getTwoImages();
     Image getByTitle(String title);
+    Image getByTitleWithJoin(String title);
     void deleteByTitle(Image image);
     void save(Image image);
     void update(Image image);
